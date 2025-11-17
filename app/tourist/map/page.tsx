@@ -2,13 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { MapPin, Navigation, Shield, AlertTriangle } from 'lucide-react'
-import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
 
 export default function SafetyMapPage() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-
   // Mock tourist location (can be dynamic later)
   const touristLocation = {
     city: 'Charminar, Hyderabad',
@@ -22,7 +19,7 @@ export default function SafetyMapPage() {
       <Navbar role="tourist" userName="Amaan Khan" />
 
       <div className="flex">
-        <Sidebar role="tourist" isOpen={sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} />
+        <Sidebar role="tourist" />
 
         <main className="flex-1 p-6">
           <motion.div

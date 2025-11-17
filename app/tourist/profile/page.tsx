@@ -2,13 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { User, MapPin, Calendar, Plane, Shield, Download, Share2, QrCode } from 'lucide-react'
-import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
-import Image from 'next/image'
 
 export default function ProfilePage() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const touristData = {
     name: 'John Doe',
@@ -35,7 +32,7 @@ export default function ProfilePage() {
       <Navbar role="tourist" userName="Amaan Khan" />
 
       <div className="flex">
-        <Sidebar role="tourist" isOpen={sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} />
+        <Sidebar role="tourist" />
 
         <main className="flex-1 p-6">
           <motion.div

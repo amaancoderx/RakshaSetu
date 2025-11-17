@@ -7,7 +7,6 @@ import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
 
 export default function AlertsPage() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
   const [activeTab, setActiveTab] = useState<'all' | 'active' | 'resolved'>('all')
 
   const alerts = [
@@ -90,7 +89,7 @@ export default function AlertsPage() {
       <Navbar role="tourist" userName="Amaan Khan" />
 
       <div className="flex">
-        <Sidebar role="tourist" isOpen={sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} />
+        <Sidebar role="tourist" />
 
         <main className="flex-1 p-6">
           <motion.div
