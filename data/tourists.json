@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "name": "Amaan Khan",
+    "did": "did:rks:0x91a23df4c5e6",
+    "email": "amaan@example.com",
+    "phone": "+91 9876543210",
+    "nationality": "Indian",
+    "currentLocation": {
+      "lat": 17.3850,
+      "lng": 78.4867,
+      "address": "Charminar, Hyderabad"
+    },
+    "riskScore": 62,
+    "status": "unsafe",
+    "lastSeen": "2025-11-01T14:45:00Z",
+    "validity": "2025-12-31"
+  },
+  {
+    "id": 2,
+    "name": "Priya Sharma",
+    "did": "did:rks:0x82b34ef5d6f7",
+    "email": "priya@example.com",
+    "phone": "+91 9876543211",
+    "nationality": "Indian",
+    "currentLocation": {
+      "lat": 17.4065,
+      "lng": 78.4772,
+      "address": "Hussain Sagar, Hyderabad"
+    },
+    "riskScore": 28,
+    "status": "safe",
+    "lastSeen": "2025-11-01T14:30:00Z",
+    "validity": "2025-12-31"
+  },
+  {
+    "id": 3,
+    "name": "John Doe",
+    "did": "did:rks:0x73c45fg6e7g8",
+    "email": "john@example.com",
+    "phone": "+1 555-123-4567",
+    "nationality": "USA",
+    "currentLocation": {
+      "lat": 17.4435,
+      "lng": 78.3489,
+      "address": "Golconda Fort, Hyderabad"
+    },
+    "riskScore": 85,
+    "status": "critical",
+    "lastSeen": "2025-11-01T15:00:00Z",
+    "validity": "2025-12-31"
+  },
+  {
+    "id": 4,
+    "name": "Sarah Johnson",
+    "did": "did:rks:0x64d56gh7f8h9",
+    "email": "sarah@example.com",
+    "phone": "+44 7700 900123",
+    "nationality": "UK",
+    "currentLocation": {
+      "lat": 17.4239,
+      "lng": 78.4738,
+      "address": "Birla Mandir, Hyderabad"
+    },
+    "riskScore": 15,
+    "status": "safe",
+    "lastSeen": "2025-11-01T14:20:00Z",
+    "validity": "2025-12-31"
+  },
+  {
+    "id": 5,
+    "name": "Rajesh Kumar",
+    "did": "did:rks:0x55e67hi8g9i0",
+    "email": "rajesh@example.com",
+    "phone": "+91 9876543212",
+    "nationality": "Indian",
+    "currentLocation": {
+      "lat": 17.4126,
+      "lng": 78.4412,
+      "address": "Abids, Hyderabad"
+    },
+    "riskScore": 45,
+    "status": "safe",
+    "lastSeen": "2025-11-01T14:50:00Z",
+    "validity": "2025-12-31"
+  }
+]

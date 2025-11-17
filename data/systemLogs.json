@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2025-11-01T15:00:45Z",
+    "event": "blockchain_sync",
+    "status": "success",
+    "blockNumber": 1245678,
+    "txHash": "0x9a3c8f7e2b4d1a6f5e9c3b8a7d2f4e1c6b9a5d3e8f7c2a4b1e6d9f3c5a8b7e4",
+    "description": "Tourist DID verified on blockchain",
+    "verified": true
+  },
+  {
+    "id": 2,
+    "timestamp": "2025-11-01T14:58:32Z",
+    "event": "ai_analysis",
+    "status": "success",
+    "model": "GISP-AI-v2.1",
+    "confidence": 0.94,
+    "description": "Risk assessment completed for tourist did:rks:0x91a23df4c5e6",
+    "verified": true
+  },
+  {
+    "id": 3,
+    "timestamp": "2025-11-01T14:55:12Z",
+    "event": "geofence_alert",
+    "status": "warning",
+    "location": "Golconda Fort",
+    "description": "Tourist entered restricted zone",
+    "verified": true
+  },
+  {
+    "id": 4,
+    "timestamp": "2025-11-01T14:50:28Z",
+    "event": "network_status",
+    "status": "success",
+    "latency": "12ms",
+    "nodes": 47,
+    "description": "Network health check passed",
+    "verified": true
+  },
+  {
+    "id": 5,
+    "timestamp": "2025-11-01T14:45:15Z",
+    "event": "panic_alert",
+    "status": "critical",
+    "touristId": "did:rks:0x91a23df4c5e6",
+    "description": "Emergency panic button triggered",
+    "verified": true
+  },
+  {
+    "id": 6,
+    "timestamp": "2025-11-01T14:40:08Z",
+    "event": "blockchain_sync",
+    "status": "success",
+    "blockNumber": 1245677,
+    "txHash": "0x8b2d7c6f1e3a9d5c4b8e2f7a1d6c9b3e5a8f2d7c4e1b9a6d3f8c5e2a7b4d1c6",
+    "description": "Alert data written to distributed ledger",
+    "verified": true
+  },
+  {
+    "id": 7,
+    "timestamp": "2025-11-01T14:35:42Z",
+    "event": "ai_analysis",
+    "status": "success",
+    "model": "GISP-AI-v2.1",
+    "confidence": 0.89,
+    "description": "Location safety score computed",
+    "verified": true
+  },
+  {
+    "id": 8,
+    "timestamp": "2025-11-01T14:30:19Z",
+    "event": "system_heartbeat",
+    "status": "success",
+    "uptime": "99.8%",
+    "description": "All systems operational",
+    "verified": true
+  }
+]

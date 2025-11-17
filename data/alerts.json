@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "touristId": 1,
+    "touristName": "Amaan Khan",
+    "touristDid": "did:rks:0x91a23df4c5e6",
+    "type": "panic",
+    "severity": "high",
+    "status": "active",
+    "timestamp": "2025-11-01T12:10:00Z",
+    "location": {
+      "lat": 17.3850,
+      "lng": 78.4867,
+      "address": "Charminar, Hyderabad"
+    },
+    "description": "Panic button triggered by tourist",
+    "responseTime": null,
+    "resolvedAt": null
+  },
+  {
+    "id": 2,
+    "touristId": 3,
+    "touristName": "John Doe",
+    "touristDid": "did:rks:0x73c45fg6e7g8",
+    "type": "restricted_area",
+    "severity": "critical",
+    "status": "active",
+    "timestamp": "2025-11-01T14:55:00Z",
+    "location": {
+      "lat": 17.4435,
+      "lng": 78.3489,
+      "address": "Golconda Fort, Hyderabad"
+    },
+    "description": "Tourist entered restricted zone after hours",
+    "responseTime": null,
+    "resolvedAt": null
+  },
+  {
+    "id": 3,
+    "touristId": 2,
+    "touristName": "Priya Sharma",
+    "touristDid": "did:rks:0x82b34ef5d6f7",
+    "type": "safe_zone",
+    "severity": "low",
+    "status": "resolved",
+    "timestamp": "2025-11-01T10:45:00Z",
+    "location": {
+      "lat": 17.4065,
+      "lng": 78.4772,
+      "address": "Hussain Sagar, Hyderabad"
+    },
+    "description": "Tourist entered safe zone",
+    "responseTime": "00:02:30",
+    "resolvedAt": "2025-11-01T10:47:30Z"
+  },
+  {
+    "id": 4,
+    "touristId": 1,
+    "touristName": "Amaan Khan",
+    "touristDid": "did:rks:0x91a23df4c5e6",
+    "type": "high_risk",
+    "severity": "medium",
+    "status": "monitoring",
+    "timestamp": "2025-11-01T11:30:00Z",
+    "location": {
+      "lat": 17.3850,
+      "lng": 78.4867,
+      "address": "Charminar, Hyderabad"
+    },
+    "description": "Risk score exceeded threshold (>60)",
+    "responseTime": null,
+    "resolvedAt": null
+  },
+  {
+    "id": 5,
+    "touristId": 4,
+    "touristName": "Sarah Johnson",
+    "touristDid": "did:rks:0x64d56gh7f8h9",
+    "type": "check_in",
+    "severity": "low",
+    "status": "resolved",
+    "timestamp": "2025-11-01T09:15:00Z",
+    "location": {
+      "lat": 17.4239,
+      "lng": 78.4738,
+      "address": "Birla Mandir, Hyderabad"
+    },
+    "description": "Tourist checked in at location",
+    "responseTime": "00:00:45",
+    "resolvedAt": "2025-11-01T09:15:45Z"
+  }
+]
