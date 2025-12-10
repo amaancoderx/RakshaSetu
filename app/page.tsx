@@ -148,7 +148,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
+            className="relative hidden lg:block"
           >
             <div className="relative w-full h-[600px] flex items-center justify-center">
               {/* Central Logo */}
