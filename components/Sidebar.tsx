@@ -21,11 +21,17 @@ interface SidebarProps {
   role: 'tourist' | 'authority'
 }
 
+interface MenuItem {
+  icon: any
+  label: string
+  href: string
+}
+
 export default function Sidebar({ role }: SidebarProps) {
   const [showPanicModal, setShowPanicModal] = useState(false)
   const pathname = usePathname()
 
-  const touristMenuItems = [
+  const touristMenuItems: MenuItem[] = [
     { icon: LayoutDashboard, label: 'Dashboard', href: '/tourist/dashboard' },
     { icon: MapPin, label: 'My Location', href: '/tourist/location' },
     { icon: AlertTriangle, label: 'Alerts', href: '/tourist/alerts' },
@@ -33,7 +39,7 @@ export default function Sidebar({ role }: SidebarProps) {
     { icon: Settings, label: 'Settings', href: '/tourist/settings' },
   ]
 
-  const authorityMenuItems = [
+  const authorityMenuItems: MenuItem[] = [
     { icon: LayoutDashboard, label: 'Dashboard', href: '/authority/dashboard' },
     { icon: MapPin, label: 'Map Overview', href: '/authority/map' },
     { icon: Activity, label: 'Zone Management', href: '/authority/zones' },
@@ -93,7 +99,7 @@ export default function Sidebar({ role }: SidebarProps) {
           <PanicModal
             isOpen={showPanicModal}
             onClose={() => setShowPanicModal(false)}
-            location="Mumbai, Maharashtra"
+            location="Charminar, Hyderabad"
           />
         </>
       )}

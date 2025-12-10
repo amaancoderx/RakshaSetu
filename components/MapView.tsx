@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { MapPin, Navigation } from 'lucide-react'
+import { MapPin, Navigation, Shield, Users } from 'lucide-react'
 
 interface Location {
   lat: number
@@ -18,9 +18,19 @@ interface MapViewProps {
     status?: string
   }>
   height?: string
+  showSafetyScore?: boolean
+  safetyScore?: number
 }
 
-export default function MapView({ location, markers = [], height = '400px' }: MapViewProps) {
+export default function MapView({ location, markers = [], height = '400px', showSafetyScore = false, safetyScore = 78 }: MapViewProps) {
+  const getSafetyColor = (score: number) => {
+    if (score >= 70) return { bg: 'bg-green-500', text: 'text-green-600', light: 'bg-green-500/20' }
+    if (score >= 40) return { bg: 'bg-yellow-500', text: 'text-yellow-600', light: 'bg-yellow-500/20' }
+    return { bg: 'bg-red-500', text: 'text-red-600', light: 'bg-red-500/20' }
+  }
+
+  const safetyColors = getSafetyColor(safetyScore)
+
   return (
     <div className="relative w-full rounded-lg overflow-hidden border border-gray-200 shadow-sm" style={{ height }}>
       {/* Mock Map Background */}
@@ -40,6 +50,16 @@ export default function MapView({ location, markers = [], height = '400px' }: Ma
         <div className="absolute bottom-1/3 left-0 right-0 h-2 bg-gray-300/50" />
         <div className="absolute right-1/4 top-0 bottom-0 w-2 bg-gray-300/50" />
 
+        {/* Safety Zone Circle (if showing safety score) */}
+        {showSafetyScore && (
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 0.2 }}
+            transition={{ duration: 0.8 }}
+            className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full ${safetyColors.bg}`}
+          />
+        )}
+
         {/* Main Location Marker */}
         <motion.div
           initial={{ scale: 0 }}
@@ -58,8 +78,8 @@ export default function MapView({ location, markers = [], height = '400px' }: Ma
             }}
             className="relative"
           >
-            <div className="absolute -inset-4 bg-red-500/20 rounded-full blur-md" />
-            <MapPin className="w-10 h-10 text-red-600 drop-shadow-lg relative z-10" fill="currentColor" />
+            <div className={`absolute -inset-4 ${safetyColors.light} rounded-full blur-md`} />
+            <MapPin className={`w-10 h-10 ${safetyColors.text} drop-shadow-lg relative z-10`} fill="currentColor" />
           </motion.div>
         </motion.div>
 
@@ -77,16 +97,26 @@ export default function MapView({ location, markers = [], height = '400px' }: Ma
             }}
           >
             <div className="relative group">
-              <MapPin
-                className={`w-6 h-6 ${
-                  marker.status === 'safe' ? 'text-green-600' :
-                  marker.status === 'unsafe' ? 'text-orange-600' :
-                  marker.status === 'critical' ? 'text-red-600' :
-                  'text-blue-600'
-                } drop-shadow-md`}
-                fill="currentColor"
-              />
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-navy text-white text-xs rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+              {marker.status === 'police' ? (
+                <div className="p-2 bg-blue-600 rounded-full shadow-lg">
+                  <Shield className="w-4 h-4 text-white" />
+                </div>
+              ) : marker.status === 'tourist' ? (
+                <div className="p-1.5 bg-green-500 rounded-full shadow-md">
+                  <Users className="w-3 h-3 text-white" />
+                </div>
+              ) : (
+                <MapPin
+                  className={`w-6 h-6 ${
+                    marker.status === 'safe' ? 'text-green-600' :
+                    marker.status === 'unsafe' ? 'text-orange-600' :
+                    marker.status === 'critical' ? 'text-red-600' :
+                    'text-blue-600'
+                  } drop-shadow-md`}
+                  fill="currentColor"
+                />
+              )}
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-primary text-white text-xs rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg z-50">
                 {marker.label}
               </div>
             </div>

@@ -76,28 +76,57 @@ export default function PanicModal({ isOpen, onClose, location }: PanicModalProp
     return `${mins}:${secs.toString().padStart(2, '0')}`
   }
 
+  if (!isOpen) return null
+
   return (
     <AnimatePresence>
-      {isOpen && (
-        <>
-          {/* Overlay */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/70 z-[100] backdrop-blur-sm"
-          />
+      <div className="panic-modal-container" style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 999999,
+        isolation: 'isolate'
+      }}>
+        {/* Overlay */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            backdropFilter: 'blur(4px)',
+            zIndex: 1
+          }}
+        />
 
-          {/* Modal */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ type: 'spring', duration: 0.5 }}
-            className="fixed inset-0 z-[101] flex items-center justify-center p-4 overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto my-auto" onClick={(e) => e.stopPropagation()}>
+        {/* Modal */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.9, y: 20 }}
+          transition={{ type: 'spring', duration: 0.5 }}
+          onClick={onClose}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1rem',
+            zIndex: 2
+          }}
+        >
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[85vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
               {/* Step 1: Panic Triggered Countdown */}
               {step === 1 && (
                 <motion.div
@@ -141,10 +170,20 @@ export default function PanicModal({ isOpen, onClose, location }: PanicModalProp
                   animate={{ opacity: 1, x: 0 }}
                   className="p-8"
                 >
-                  <h2 className="text-2xl font-bold text-primary mb-2 text-center">Record Voice Note (Optional)</h2>
-                  <p className="text-sm text-secondary text-center mb-6">
-                    Record a voice message to provide additional context for emergency responders
-                  </p>
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h2 className="text-2xl font-bold text-primary mb-2">Record Voice Note (Optional)</h2>
+                      <p className="text-sm text-secondary">
+                        Record a voice message to provide additional context for emergency responders
+                      </p>
+                    </div>
+                    <button
+                      onClick={onClose}
+                      className="p-2 hover:bg-gray-100 rounded-lg transition-all flex-shrink-0"
+                    >
+                      <X className="w-5 h-5 text-secondary" />
+                    </button>
+                  </div>
 
                   {/* Recording Interface */}
                   <div className="flex flex-col items-center mb-8">
@@ -343,8 +382,7 @@ export default function PanicModal({ isOpen, onClose, location }: PanicModalProp
               )}
             </div>
           </motion.div>
-        </>
-      )}
+      </div>
     </AnimatePresence>
   )
 }
