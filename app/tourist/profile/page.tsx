@@ -2,10 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { User, MapPin, Calendar, Plane, Shield, Download, Share2, QrCode } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
 
 export default function ProfilePage() {
+  const router = useRouter()
 
   const touristData = {
     name: 'John Doe',
@@ -70,6 +72,7 @@ export default function ProfilePage() {
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
+                      onClick={() => router.push('/tourist/settings')}
                       className="w-full bg-accent text-white py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors"
                     >
                       Edit Profile
@@ -78,6 +81,7 @@ export default function ProfilePage() {
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
+                      onClick={() => router.push('/tourist/settings')}
                       className="w-full bg-white border-2 border-border text-primary py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
                     >
                       Settings
