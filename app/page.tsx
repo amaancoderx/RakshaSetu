@@ -75,7 +75,7 @@ export default function LandingPage() {
               <Logo className="w-20 h-20" />
               <div>
                 <h1 className="text-3xl font-bold text-primary">RakshaSetu</h1>
-                <p className="text-sm text-secondary">v1.0.0</p>
+                <p className="text-sm text-secondary">v2.0.0</p>
               </div>
             </div>
             <motion.button
@@ -104,15 +104,15 @@ export default function LandingPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-block mb-6 px-4 py-2 border border-accent/30 rounded-full bg-accent/5"
             >
-              <span className="text-sm font-semibold text-accent">SDG 9 & 11 Initiative</span>
+              <span className="text-sm font-semibold text-accent">SDG 9, 11 and 16 Initiative</span>
             </motion.div>
 
             <h1 className="text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-              RakshaSetu
+              RakshaSetu 2.0
             </h1>
 
             <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">
-              India's Smart Tourism Safety Intelligence Network
+              Smart Civic Safety & Emergency Intelligence System
             </h2>
 
             <p className="text-xl text-secondary mb-8 leading-relaxed">
@@ -618,8 +618,8 @@ export default function LandingPage() {
       <footer className="bg-white border-t border-border py-8">
         <div className="container mx-auto px-6">
           <div className="text-center text-secondary text-sm">
-            <p className="mb-2">© 2025 RakshaSetu. All Rights Reserved.</p>
-            <p>Built for ELP College Project | SDG 9 & SDG 11</p>
+            <p className="mb-2">© 2026 RakshaSetu. All Rights Reserved.</p>
+            <p>Built for SIP College Project | SDG 9, SDG 11 and SDG 16</p>
           </div>
         </div>
       </footer>
