@@ -71,7 +71,7 @@ export default function LoginPage() {
             <Logo className="w-28 h-28" />
             <div className="text-center">
               <h1 className="text-4xl font-bold text-primary mb-2">RakshaSetu</h1>
-              <p className="text-sm text-secondary font-medium">India's Smart Tourism Safety Intelligence Network</p>
+              <p className="text-sm text-secondary font-medium">Smart Civic Safety & Emergency Intelligence System</p>
             </div>
           </motion.div>
         </div>
